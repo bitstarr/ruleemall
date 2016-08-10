@@ -2,7 +2,7 @@
  * @copyright Copyright (c) 2013 Sebastian Laube
  * @license   Licensed under MIT license
  *            See https://github.com/bitstarr/ruleemall
- * @version   1.1.0
+ * @version   1.1.1
  */
 (function( d, w ){
     "use strict";
