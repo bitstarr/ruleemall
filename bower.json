@@ -1,0 +1,20 @@
+{
+  "name": "ruleemall",
+  "homepage": "https://github.com/bitstarr/ruleemall",
+  "authors": [
+    "Sebastian Laube <hello@sebastianlaube.de>"
+  ],
+  "description": "A helper for finding the right CSS breakpoints",
+  "main": [
+    "emeter.js",
+    "emruler.js"
+  ],
+  "moduleType": [],
+  "keywords": [
+    "CSS",
+    "media queries",
+    "helper",
+    "ruler"
+  ],
+  "license": "MIT",
+}
