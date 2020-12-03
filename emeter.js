@@ -2,13 +2,11 @@
  * @copyright Copyright (c) 2013 Sebastian Laube
  * @license   Licensed under MIT license
  *            See https://github.com/bitstarr/ruleemall
- * @version   1.1.1
+ * @version   1.2.0
  */
-(function( d, w ){
+(function( d, w )
+{
     "use strict";
-
-    // sorry no IE support
-    if ( d.getElementsByTagName( 'html' )[0].className.match( /ie/ ) ) { return false; }
 
     /*
         We use 5em because with 1em the browser will round to full pixels.
@@ -17,28 +15,31 @@
     */
 
     var body = d.body,
-       factor = 5;
+        factor = 5;
 
-    // add a example unit and get the base measure
+    // add an example unit to get the base measure
+    // add a display block
     var emMeter =  d.createElement( 'div' );
     emMeter.id = 'emMeter';
     emMeter.style.cssText = 'position:fixed;bottom:4rem;left:0;z-index:900';
-    emMeter.innerHTML = '<div class="unit" style="width:' + factor + 'rem">0</div>';
+    emMeter.innerHTML = '<div class="display" style="display:inline-block;padding:.4em;font-family:monospace;font-size:.9rem;line-height:1.3;color:#fff;background:#000;background:rgba(0,0,0,.6)">0</div><div class="unit" style="width:' + factor + 'rem;visibility:hidden;">0</div>';
     body.appendChild( emMeter );
 
     var unit  = emMeter.querySelector( '.unit' ),
+        display  = emMeter.querySelector( '.display' ),
         width = unit.clientWidth/factor;
-    unit.style.cssText = 'width:auto;padding:.4em;font-family:monospace;font-size:.9em;line-height:1.3;color:#fff;background:#000;background:rgba(0,0,0,.6)';
 
     // calculate how many em the window is wide and high
-    function meter() {
+    function meter()
+    {
+        width = unit.clientWidth/factor;
         var viewWidth = w.innerWidth/width,
             viewHeight = w.innerHeight/width;
         // round 2 digits after comma
         viewWidth = Math.round( viewWidth*100 )/100;
         viewHeight = Math.round( viewHeight*100 )/100;
 
-        unit.innerHTML = 'W ' + viewWidth + 'em<br/>H ' + viewHeight + 'em';
+        display.innerHTML = 'W ' + viewWidth + 'em<br/>W ' + w.innerWidth + 'px<br/>H ' + viewHeight + 'em<br/>H ' + w.innerHeight + 'px';
     }
     meter();
 

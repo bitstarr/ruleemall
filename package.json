@@ -1,6 +1,6 @@
 {
   "name": "ruleemall",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A helper for finding the right CSS breakpoints",
   "main": [
     "emeter.js",
